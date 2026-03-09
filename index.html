@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cipher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="generator-card">
+        <div class="brand">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4M6 6h12l1.5 4.5M21 12l-2 8H5l-2-8 1.5-4.5M7 12a2 2 0 004 0M13 12a2 2 0 004 0" />
+                <path d="M3 12h18" />
+            </svg>
+            <h1>cipher</h1>
+        </div>
+        
+        <div class="password-field">
+            <input type="text" id="passwordOutput" placeholder="• • • • • • • • • •" readonly value="P4ssw0rd!">
+            <button class="clip-btn" id="copyBtn" title="copy to clipboard">
+                <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                    <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="1.8" />
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="1.8" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="strength-meter">
+            <span class="meter-label">strength</span>
+            <div class="meter-bars" id="strengthBars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <div class="length-row">
+                <span class="length-label">character length</span>
+                <span class="length-value" id="lengthDisplay">12</span>
+            </div>
+            <div class="slider">
+                <input type="range" id="lengthSlider" min="4" max="30" value="12" step="1">
+            </div>
+
+            <div class="options">
+                <label class="opt-item">
+                    <input type="checkbox" id="includeUpper" checked> <span>A–Z</span>
+                </label>
+                <label class="opt-item">
+                    <input type="checkbox" id="includeLower" checked> <span>a–z</span>
+                </label>
+                <label class="opt-item">
+                    <input type="checkbox" id="includeNumbers" checked> <span>0–9</span>
+                </label>
+                <label class="opt-item">
+                    <input type="checkbox" id="includeSymbols"> <span>!@#$%</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-primary" id="generateBtn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2 12h4l2-5 3 10 3-7 2 4h4" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                generate
+            </button>
+            <button class="btn btn-secondary" id="refreshBtn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 12a9 9 0 01-9 9 9 9 0 110-18 8 8 0 016 2.7L17 7" stroke="currentColor" stroke-width="2" fill="none" />
+                    <path d="M17 3v4h-4" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                shuffle
+            </button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast-msg">📋 copied to clipboard</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
